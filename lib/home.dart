@@ -22,7 +22,7 @@ class _HomeState extends State<Home> {
           RaisedButton(
             onPressed: () {
               Navigator.push(context, MaterialPageRoute(builder: (context){
-                return About();
+                return About("From Home Screen to About Screen!");
               }));
             },
             child: Text('Go to About Screen'),
