@@ -3,8 +3,13 @@ import 'package:flutter/material.dart';
 class About extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text('Welcome to About Screen'),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("About screen"),
+      ),
+      body: Center(child: Text('Welcome to About Screen!'),),
     );
+    
+
   }
 }
