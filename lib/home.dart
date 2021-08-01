@@ -1,35 +1,40 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    // TODO: implement createState
     return _HomeState();
   }
-
 }
 
 class _HomeState extends State<Home> {
+  var messageText = TextEditingController();
+  String showMessage = "";
+
   @override
   Widget build(BuildContext context) {
     return Container(
-      child :Column(
+      child: Column(
         children: <Widget>[
-          TextField(),
+          TextField(
+            controller: messageText,
+          ),
           // ignore: deprecated_member_use
           RaisedButton(
-            onPressed: (){
-
+            onPressed: () {
+              setState(() {
+                showMessage = messageText.text;
+              });
             },
-            child: Text("Show message"),
+            child: Text('Show message'),
           ),
           Center(
-            child: Text("Welcome to my Universe", textDirection: TextDirection.ltr,),
-          ),
-      ],
-    ),
+            child: Text(
+              showMessage,
+              textDirection: TextDirection.ltr,
+          ))
+        ],
+      ),
     );
   }
 }
